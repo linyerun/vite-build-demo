@@ -37,6 +37,7 @@ declare module 'vue' {
     Ch33: typeof import('./src/components/ch33/index.vue')['default']
     Ch34: typeof import('./src/components/ch34/index.vue')['default']
     Ch35: typeof import('./src/components/ch35/index.vue')['default']
+    Ch37: typeof import('./src/components/ch37/index.vue')['default']
     Component: typeof import('./src/components/ch15/Component.vue')['default']
     ComputedCase: typeof import('./src/components/ch9/ComputedCase.vue')['default']
     ComputedDemo: typeof import('./src/components/ch9/ComputedDemo.vue')['default']
