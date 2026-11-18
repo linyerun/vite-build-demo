@@ -29,15 +29,17 @@
 // import Ch30 from "./ch30/index.vue";
 // import Ch32 from "./ch32-33/index.vue";
 // import Ch34 from "./ch34/index.vue";
-import Ch35 from "./ch35/index.vue";
+// import Ch35 from "./ch35/index.vue";
 // import Ch38 from "./ch38/index.vue";
+import Ch99Define from './ch99/define/index.vue'
 
 // const count = ref(0)
 </script>
 
 <template>
+  <Ch99Define/>
 <!--  <Ch38/>-->
-  <Ch35/>
+<!--  <Ch35/>-->
 <!--  <Ch34/>-->
 <!--  <Ch32/>-->
 <!--  <Ch30/>-->
