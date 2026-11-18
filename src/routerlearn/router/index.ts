@@ -7,6 +7,17 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         name: 'Login',
+        alias: ['/root1', '/root2'], // 起别名
+        // 重定向方式
+        // redirect: '/ns/all',
+        // redirect: {path: '/ns/all'},
+        redirect: (to)=>{
+            console.log(to)
+          return {
+              path: '/ns/all',
+              query: {name: '小林', ...to.query} // 可以传参
+          }
+        },
         component: ()=>import('@/routerlearn/views/Login.vue'),
         children: [
             {
