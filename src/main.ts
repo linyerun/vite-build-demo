@@ -3,6 +3,7 @@ import './style.css'
 import App from './App.vue'
 import Card from "./components/ch15/Card.vue";
 import Loading from "./components/ch30/Loading.ts";
+import {createPinia} from "pinia";
 
 const app = createApp(App)
 
@@ -32,6 +33,10 @@ app.config.globalProperties.$filters = {
         return `林叶润: ${str}`
     }
 }
+
+// pinia注册
+const store = createPinia()
+app.use(store)
 
 app.use(Loading) // 注册自定义插件
 app.component('Card', Card)// 把局部组件注册到全局

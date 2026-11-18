@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import Page from './components/Page.vue'
+// import Page from './components/Page.vue'
+import PiniaPage from './pinialearning/index.vue'
 </script>
 
 <template>
-  <Page />
+  <PiniaPage/>
+<!--  <Page />-->
 </template>

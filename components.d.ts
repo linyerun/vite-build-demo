@@ -44,6 +44,7 @@ declare module 'vue' {
     CustomRefCase: typeof import('./src/components/ch6/CustomRefCase.vue')['default']
     Define: typeof import('./src/components/ch99/define/index.vue')['default']
     Dialog: typeof import('./src/components/ch19/Dialog.vue')['default']
+    ElButton: typeof import('element-plus/es')['ElButton']
     Env: typeof import('./src/components/ch99/env/index.vue')['default']
     EventLoop: typeof import('./src/components/ch35/EventLoop.vue')['default']
     Father: typeof import('./src/components/ch17/Father.vue')['default']
