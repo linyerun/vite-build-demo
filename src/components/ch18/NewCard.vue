@@ -10,7 +10,7 @@ type DataType = {
 }
 const dataList = ref<DataType[]>([]);
 
-// <script setup> 中可以使用顶层 await。结果代码会被编译成 async setup()
+// <script setup> 中可以使用顶层 await。结果代码会被编译成 async setup(), 就变成异步组件了，配合Suspense实现异步加载效果
 const data = await getData()
 await new Promise(resolve => {setTimeout(resolve, 2000)})
 dataList.value = data.data

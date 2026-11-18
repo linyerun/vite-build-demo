@@ -46,6 +46,8 @@ declare module 'vue' {
     Dialog: typeof import('./src/components/ch19/Dialog.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElInput: typeof import('element-plus/es')['ElInput']
+    ElSkeleton: typeof import('element-plus/es')['ElSkeleton']
+    ElSkeletonItem: typeof import('element-plus/es')['ElSkeletonItem']
     EventLoop: typeof import('./src/components/ch35/EventLoop.vue')['default']
     Father: typeof import('./src/components/ch17/Father.vue')['default']
     Father1: typeof import('./src/components/ch14/Father1.vue')['default']

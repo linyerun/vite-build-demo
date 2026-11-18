@@ -4,6 +4,10 @@ import B from './B.vue'
 import C from './C.vue'
 import {reactive, markRaw, ref, shallowRef} from "vue";
 
+/*
+* markRaw作用：标记一个对象，使其永远不会被转为响应式代理。Vue 会跳过对这个对象的响应式处理。
+* */
+
 const tabData = reactive<{name: string, com: any}[]>([
   {
     name: '组件A',

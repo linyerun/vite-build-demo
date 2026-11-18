@@ -1,4 +1,5 @@
 - 宏任务: script(整体代码)、setTimeout、setInterval、UI交互事件、postMessage、Ajax
+  - 浏览器端：由 Web APIs 中的 Timer 模块维护，到期后把回调函数放入宏任务队列（Task Queue）
 - 微任务: Promise .then catch finally、MutaionObserver、process.nextTick(Node.js 环境)
 
 

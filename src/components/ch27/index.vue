@@ -20,13 +20,18 @@ const vMove: Directive = {
     el.style.background = dir.value.background;
     console.log("mounted========>");
   },
+
+  // 组件更新前
   beforeUpdate(el: HTMLElement, dir: DirectiveBinding<Value>) {
     el.style.background = dir.value.background
   },
+  // 组件更新后
   updated(...args: Array<any>) {
     console.log("更新结束");
     console.log(args);
   },
+
+
   beforeUnmount(...args: Array<any>) {
     console.log(args);
     console.log("======>卸载之前");
@@ -42,9 +47,9 @@ const bg = ref('red')
 <template>
   <button @click="show = !show">开关{{show}}</button>
   <div>
-    <button @click="bg='red'">变红色</button>
-    <button @click="bg='blue'">变蓝色</button>
-    <button @click="bg='black'">变黑色</button>
+    <button @click="bg='red'" style="background:red">变红色</button>
+    <button @click="bg='blue'" style="background: blue;margin-left: 10px">变蓝色</button>
+    <button @click="bg='black'" style="background: #312f2f;margin-left: 10px">变黑色</button>
   </div>
   <Dialog  v-move:arg1.l.y.r="{background:bg, flag:show}"></Dialog>
 </template>

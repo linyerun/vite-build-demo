@@ -11,6 +11,7 @@ const fullName = computed({
     return firstName.value + "-" + lastName.value
   },
   set(value) {
+    // computed返回的值变更这个函数会被触发
     [firstName.value, lastName.value] = value.split("-")
     console.log('computed set函数被触发了')
   }
