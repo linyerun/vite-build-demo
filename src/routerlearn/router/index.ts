@@ -6,7 +6,19 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         name: 'Login',
-        component: ()=>import('@/routerlearn/views/Login.vue')
+        component: ()=>import('@/routerlearn/views/Login.vue'),
+        children: [
+            {
+                path: '/inner1',
+                name: 'Inner1',
+                component: () => import('@/routerlearn/views/Inner1.vue'),
+            },
+            {
+                path: '/inner2',
+                name: 'Inner2',
+                component: () => import('@/routerlearn/views/Inner2.vue'),
+            }
+        ],
     },
     {
         path: '/reg',
