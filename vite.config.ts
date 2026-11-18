@@ -33,5 +33,14 @@ export default ({mode}: any) => {
                 resolvers: [ElementPlusResolver()],
             }),
         ],
+        server: {
+            proxy: {
+                '/api/v1': {
+                    target: 'http://localhost:10010',
+                    changeOrigin: true,
+                    rewrite: (path: string)=> path,
+                },
+            },
+        },
     })
 }

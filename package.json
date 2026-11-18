@@ -11,11 +11,13 @@
   "dependencies": {
     "axios": "^1.21.1",
     "element-plus": "^2.14.8",
+    "express": "^5.3.0",
     "mitt": "^3.0.1",
     "vue": "^3.5.44"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.5",
+    "@types/express": "^5.0.6",
     "@types/node": "^24.19.2",
     "@vitejs/plugin-vue": "^6.0.10",
     "@vue/tsconfig": "^0.9.1",

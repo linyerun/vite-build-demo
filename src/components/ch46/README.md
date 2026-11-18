@@ -1,0 +1,2 @@
+- tsc express.ts --ignoreConfig
+- node express.js
