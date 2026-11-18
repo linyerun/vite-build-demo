@@ -4,6 +4,7 @@ import App from './App.vue'
 import Card from "./components/ch15/Card.vue";
 import Loading from "./components/ch30/Loading.ts";
 import {createPinia, type PiniaPluginContext} from "pinia";
+import router from '@/routerlearn/router'
 
 const app = createApp(App)
 
@@ -65,6 +66,7 @@ const PiniaStateAutoSavePlugin = (options: PiniaPluginOptions) => {
 }
 store.use(PiniaStateAutoSavePlugin({})) // 每当一个store被创建时都会触发这个插件
 
+app.use(router)// 路由注册
 app.use(store)// pinia注册
 app.use(Loading) // 注册自定义插件
 app.component('Card', Card)// 把局部组件注册到全局

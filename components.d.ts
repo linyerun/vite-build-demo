@@ -61,6 +61,8 @@ declare module 'vue' {
     ProvideB: typeof import('./src/components/ch23/ProvideB.vue')['default']
     ReactiveCase: typeof import('./src/components/ch7/ReactiveCase.vue')['default']
     RefCase: typeof import('./src/components/ch6/RefCase.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     Skeleton: typeof import('./src/components/ch18/Skeleton.vue')['default']
     Son: typeof import('./src/components/ch17/Son.vue')['default']
     Son1: typeof import('./src/components/ch14/Son1.vue')['default']
