@@ -4,10 +4,17 @@
 // const emit = defineEmits(['on-click', 'on-a', 'on-b'])
 
 // 写法2
-const emit = defineEmits<{
+/*const emit = defineEmits<{
   (e: 'on-click', name: string): void;
   (e: 'on-a', age: number): void;
   (e: 'on-b', year: number): void;
+}>();*/
+
+// 写法3（写法2和写法3不能混在一起写）命名元组写法（vue3.3+）
+const emit = defineEmits<{
+  'on-click': [name: string]
+  'on-a': [age: number]
+  'on-b': [year: number]
 }>();
 
 const send = () => {
