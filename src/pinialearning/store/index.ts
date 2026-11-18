@@ -12,14 +12,19 @@ const login = (): Promise<User> => {
     })
 }
 
-interface State {
+interface TestState {
     current: number,
     name: string,
     user: User|null,
 }
 
+interface BaseState {
+    name: string,
+    age: number
+}
+
 export const useTestStore = defineStore(NAMES.TEST,{
-    state(): State {
+    state(): TestState {
         return {
             current: 11,
             name: '小林11',
@@ -49,4 +54,13 @@ export const useTestStore = defineStore(NAMES.TEST,{
             this.user = user
         },
     },
+})
+
+export const useBaseStore = defineStore(NAMES.BASE, {
+    state(): BaseState {
+        return {
+            name: '1',
+            age: 10,
+        }
+    }
 })

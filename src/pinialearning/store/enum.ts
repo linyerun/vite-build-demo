@@ -1,5 +1,6 @@
 export const NAMES = {
     TEST: 'TEST',
+    BASE: 'BASE',
 } as const;
 
 /*

@@ -1,9 +1,9 @@
-import { createApp } from 'vue'
+import { createApp, toRaw } from 'vue'
 import './style.css'
 import App from './App.vue'
 import Card from "./components/ch15/Card.vue";
 import Loading from "./components/ch30/Loading.ts";
-import {createPinia} from "pinia";
+import {createPinia, type PiniaPluginContext} from "pinia";
 
 const app = createApp(App)
 
@@ -34,10 +34,38 @@ app.config.globalProperties.$filters = {
     }
 }
 
-// pinia注册
+// 创建pinia对象
 const store = createPinia()
-app.use(store)
 
+// 编写pinia持久化插件
+const piniaKey = '__PINIA__'
+interface PiniaPluginOptions {
+    key?: string
+}
+// 保持数据到缓存中
+const setStorage = (key: string, value: any): void => {
+    localStorage.setItem(key, JSON.stringify(value))
+}
+// 从缓存中读取
+const getStorage = (key: string) => {
+    return (localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key) as string) : {})
+}
+
+const PiniaStateAutoSavePlugin = (options: PiniaPluginOptions) => {
+    return (ctx: PiniaPluginContext) => {
+        const {store} = ctx
+        const key = `${options?.key ?? piniaKey}-${store.$id}`
+        const data = getStorage(key)
+        store.$patch(data)
+        store.$subscribe(()=>setStorage(key, toRaw(store.$state)),{detached: true})
+        // return {...data}
+        // TEST 的缓存里有 user。哪怕它是 null，JS 里 typeof null === 'object' 也命中；登录后它是 {name, age} 普通对象，同样命中 → 报 Property "user" ... is not reactive
+        // 所以使用$patch就好了
+    }
+}
+store.use(PiniaStateAutoSavePlugin({})) // 每当一个store被创建时都会触发这个插件
+
+app.use(store)// pinia注册
 app.use(Loading) // 注册自定义插件
 app.component('Card', Card)// 把局部组件注册到全局
 app.mount('#app')
