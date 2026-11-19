@@ -12,8 +12,7 @@
     "noFallthroughCasesInSwitch": true,
 
     /* 通过@来写路径 */
-    "baseUrl": ".",
-    "paths": { "@/*": ["src/*"] }
+    "paths": { "@/*": ["./src/*"] }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

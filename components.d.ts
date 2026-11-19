@@ -45,6 +45,7 @@ declare module 'vue' {
     Define: typeof import('./src/components/ch99/define/index.vue')['default']
     Dialog: typeof import('./src/components/ch19/Dialog.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElInput: typeof import('element-plus/es')['ElInput']
     Env: typeof import('./src/components/ch99/env/index.vue')['default']
     EventLoop: typeof import('./src/components/ch35/EventLoop.vue')['default']
     Father: typeof import('./src/components/ch17/Father.vue')['default']
