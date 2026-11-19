@@ -1,10 +1,19 @@
-import { createApp, toRaw } from 'vue'
+import {createApp, createVNode, render, toRaw} from 'vue'
 import './style.css'
 import App from './App.vue'
 import Card from "./components/ch15/Card.vue";
 import Loading from "./components/ch30/Loading.ts";
 import {createPinia, type PiniaPluginContext} from "pinia";
 import router from '@/routerlearn/router'
+
+import LoadingBar from "@/routerlearn/views/demo/LoadingBar.vue";
+const LoadingBarVNode = createVNode(LoadingBar)
+// 必须用独立容器：render 会复用容器上的 _vnode，直接渲染到 body 会被 Loading 插件的 render(vnode, body) 卸载
+const loadingBarContainer = document.createElement('div')
+document.body.appendChild(loadingBarContainer)
+render(LoadingBarVNode, loadingBarContainer)
+router.beforeEach(() => LoadingBarVNode.component?.exposed?.startLoading())
+router.afterEach(() => LoadingBarVNode.component?.exposed?.endLoading())
 
 const app = createApp(App)
 

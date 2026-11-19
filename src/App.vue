@@ -2,13 +2,15 @@
 // import Page from './components/Page.vue'
 // import PiniaPage from './pinialearning/index.vue'
 // import PiniaDemo from './pinialearning/demo.vue'
-import RouterPage from '@/routerlearn/index.vue'
+// import RouterPage from '@/routerlearn/index.vue'
+import RouterDemo from '@/routerlearn/demo.vue'
 
 </script>
 
 <template>
-  <RouterPage/>
-<!--  <PiniaDemo/>-->
-<!--  <PiniaPage/>-->
-<!--  <Page />-->
+  <RouterDemo/>
+  <!--  <RouterPage/>-->
+  <!--  <PiniaDemo/>-->
+  <!--  <PiniaPage/>-->
+  <!--  <Page />-->
 </template>
